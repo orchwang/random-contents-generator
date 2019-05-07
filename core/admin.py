@@ -9,12 +9,10 @@ class AttachInline(admin.TabularInline):
 class ContentAdmin(admin.ModelAdmin):
     list_display = (
         'id',
-        'category_id',
         'writer_id',
         'sliced_title',
         'sliced_content',
-        'created_date',
-        'modified_date'
+        'created_date'
     )
     inlines = [
         AttachInline
@@ -40,11 +38,9 @@ class ContentAdmin(admin.ModelAdmin):
 class AttachAdmin(admin.ModelAdmin):
     list_display = (
         'id',
-        'file_name',
-        'file_ext',
+        'file_original_name',
         'file_path',
-        'created_date',
-        'modified_date'
+        'created_date'
     )
 
 
