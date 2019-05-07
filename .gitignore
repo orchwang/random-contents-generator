@@ -102,3 +102,20 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Pycharm Settings
+.idea/
+
+# Environment Settings File
+environments/settings.json
+
+# Data Files
+data/attaches/*
+data/contents/*
+data/words/*
+
+# bins
+bin
+
+# logs
+log

@@ -1,0 +1,13 @@
+{
+    "__project": "Random Contents Generator Project",
+    "__comment": "This environment.json file is for random-contents-generator project",
+    "secret_key": "",
+    "static": {
+        "static_url": "/static/",
+        "static_root": "/home/user/random-contents-generator/static/"
+    },
+    "media": {
+        "media_url": "/media/",
+        "static_root": "/home/user/random-contents-generator/media/"
+    }
+}
