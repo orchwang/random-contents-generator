@@ -110,12 +110,13 @@ venv.bak/
 environments/settings.json
 
 # Data Files
-data/attaches/*
 data/contents/*
-data/words/*
 
 # bins
 bin
 
 # logs
 log
+
+# Migration files
+core/migrations/*

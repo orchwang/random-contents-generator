@@ -9,5 +9,12 @@
     "media": {
         "media_url": "/media/",
         "static_root": "/home/user/random-contents-generator/media/"
-    }
+    },
+    "attaches": [
+        "sample.doc",
+        "sample.docx",
+        "sample.ppt",
+        "sample.pptx",
+        "sample.hwp"
+    ]
 }

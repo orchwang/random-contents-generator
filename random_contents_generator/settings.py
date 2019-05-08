@@ -93,7 +93,55 @@ MEDIA_URL = environment['media']['media_url']
 MEDIA_ROOT = environment['media']['media_root']
 
 ATTACH_EXTENSIONS = ['hwp', 'xls', 'xlsx', 'doc', 'docx', 'ppt', 'pptx', 'pdf']
+ATTACH_FILES = environment['attaches']
 
 COPYRIGHT_TEXT = '©Copyright 2019, HwangJongtaek'
 
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 365  # One year
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'request': {
+            'format': '[%(levelname)s]|%(asctime)s|%(pathname)s|%(lineno)s|'
+                      '%(funcName)s()|%(message)s'
+        }
+    },
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'request'
+        },
+        'log': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': './log/'
+                        'debug.log',
+            'formatter': 'request'
+        },
+        'info': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': './log/'
+                        'info.log',
+            'formatter': 'request'
+        },
+    },
+    'loggers': {
+        'api': {
+            'handlers': ['log', 'info', 'console'],
+            'level': 'DEBUG'
+        },
+        'core': {
+            'handlers': ['log', 'info', 'console'],
+            'level': 'DEBUG'
+        }
+    }
+}

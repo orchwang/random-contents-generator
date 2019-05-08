@@ -9,7 +9,7 @@ class AttachInline(admin.TabularInline):
 class ContentAdmin(admin.ModelAdmin):
     list_display = (
         'id',
-        'writer_id',
+        'writer_name',
         'sliced_title',
         'sliced_content',
         'created_date'

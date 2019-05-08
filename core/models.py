@@ -13,13 +13,13 @@ class Content(models.Model):
     """Contents Data
 
     COLUMNS:
-        writer_id: Writer's id of contents
+        writer_name: Writer's name of contents
         title: Title of contents
         content: Content of contents
         modified_date: Modifed datetime data of contents
         created_date: Created datetime data of contents
     """
-    writer_id = models.CharField(max_length=100, null=True, blank=True)
+    writer_name = models.CharField(max_length=100, null=True, blank=True)
     title = models.CharField(max_length=500, null=True)
     content = models.TextField(null=False, blank=True)
     created_date = models.DateTimeField(auto_now=True)
@@ -55,12 +55,7 @@ class Attach(models.Model):
         on_delete=models.CASCADE,
     )
     file_original_name = models.CharField(max_length=500, null=True)
-    file_path = models.FileField(
-        upload_to=unique_attach_file_name,
-        null=True,
-        blank=True,
-        default=None
-    )
+    file_path = models.TextField(null=False, blank=True)
     created_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
