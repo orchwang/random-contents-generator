@@ -16,5 +16,14 @@
         "sample.ppt",
         "sample.pptx",
         "sample.hwp"
-    ]
+    ],
+    "database": {
+        "type": "mysql",
+        "engine": "django.db.backends.mysql",
+        "name": "",
+        "user": "",
+        "password": "",
+        "host": "",
+        "port": ""
+    }
 }

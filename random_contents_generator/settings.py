@@ -55,12 +55,25 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'random_contents_generator.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+database = environment['database']
+if database['type'] is 'sqlite':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': database['engine'],
+            'NAME': database['name'],
+            'USER': database['user'],
+            'PASSWORD': database['password'],
+            'HOST': database['host'],
+            'PORT': database['port']
+        }
+    }
 
 AUTH_PASSWORD_VALIDATORS = [
     {
